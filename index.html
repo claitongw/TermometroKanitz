@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=chrome">
+	<title>Kanitz Model</title>
+	<link rel="stylesheet">
+	
+</head>
+<body>
+	<div>
+		<form action="index_submit" method="get" accept-charset="utf-8" id="formValores">
+			<br><input type="text" id="LL" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Lucro Liquido">
+			<br><input type="text" id="PL" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Patrimonio Liquido">
+			<br><input type="text" id="AC" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Ativo Circulante">
+			<br><input type="text" id="RLP" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Realizavel Longo Prazo">
+			<br><input type="text" id="PE" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Passivo Circulante">
+			<br><input type="text" id="PC" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Passivo NÃO Circulante">
+			<br><input type="text" id="ESTOQUE" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Estoque">
+			<br><input type="button" name="CALCULAR" value="Calcular" onclick="calcula()">
+		</form>
+	</div>
+
+	<div>
+
+		
+	</div>
+
+
+
+	
+
+<script src="js/mascaraMoeda.js"></script>
+<script src="js/calculaX.js"></script>
+<script src="js/javascript.js"></script>
+	
+</body>
+</html>
+
+
+<!--
+KNT = 0,05*1 + 1,65*2 + 3,55*3 - 1,06*4 - 0,33*5
+
+X1 = LL/PL
+
+X2 = (AC+RLP)/PE
+
+X3 = (AC-Estoques)/PC
+
+X4 = AC/PC
+
+X5 = ET/PL
+
+
+Escala de kanitz
+Solvente > 0
+Indefinida = 0 até (-3)
+Insolvente <  3 
+-->
