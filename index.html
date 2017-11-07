@@ -14,8 +14,8 @@
 			<br><input type="text" id="PL" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Patrimonio Liquido">
 			<br><input type="text" id="AC" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Ativo Circulante">
 			<br><input type="text" id="RLP" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Realizavel Longo Prazo">
-			<br><input type="text" id="PE" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Passivo Circulante">
-			<br><input type="text" id="PC" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Passivo NÃO Circulante">
+			<br><input type="text" id="PC" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Passivo Circulante"> 
+			<br><input type="text" id="PNC" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Passivo NÃO Circulante"> 
 			<br><input type="text" id="ESTOQUE" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Estoque">
 			<br><input type="button" name="CALCULAR" value="Calcular" onclick="calcula()">
 		</form>
@@ -26,9 +26,6 @@
 		
 	</div>
 
-
-
-	
 
 <script src="js/mascaraMoeda.js"></script>
 <script src="js/calculaX.js"></script>
@@ -49,11 +46,24 @@ X3 = (AC-Estoque)/PC
 
 X4 = AC/PC
 
-X5 = ET/PL
+X5 = ET(PC)/PL
+
+
+PC+PÑC = PE = dividas
+PC = ET = Dividas
 
 
 Escala de kanitz
 Solvente > 0
 Indefinida = 0 até (-3)
 Insolvente <  3 
+
+
+15.244.949,00
+37.755.431,00
+54.684.396,00
+63.794,00
+27.156.528,00
+564.667,00
+16.872.053,00
 -->

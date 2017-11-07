@@ -14,8 +14,11 @@ function calcula(){
 			PL = PL.toString().replace('.','');
 			PL = PL.replace(',','.');
 
-		var x1 = LL/PL;
-		console.log(x1);
+		var xx1 = LL/PL;
+		var x1 = xx1*0.05;
+
+		return x1;
+
 	}
 
 	function calculaX2 (){
@@ -31,15 +34,24 @@ function calcula(){
 			RLP = RLP.toString().replace('.','');
 			RLP = RLP.replace(',','.');			
 
-		var PE = document.getElementById("PE").value;
-			PE = PE.toString().replace('.','');
-			PE = PE.toString().replace('.','');
-			PE = PE.toString().replace('.','');
-			PE = PE.replace(',','.');				
+		var PC = document.getElementById("PC").value;
+			PC = PC.toString().replace('.','');
+			PC = PC.toString().replace('.','');
+			PC = PC.toString().replace('.','');
+			PC = PC.replace(',','.');
 
-		var x2 = AC + RLP;
-			x2 = x2/PE;
-		console.log(x2);
+		var PNC = document.getElementById("PNC").value;
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.replace(',','.');					
+
+		var xx2 = parseInt(AC) + parseInt(RLP);
+		var PE =  parseInt(PC) + parseInt(PNC);
+		var x2 = ((xx2/PE)*1.65);
+		//console.log(x2);
+
+		return x2;
 	}
 
 	function calculaX3 () {
@@ -62,10 +74,11 @@ function calcula(){
 			PC = PC.toString().replace('.','');
 			PC = PC.replace(',','.');
 
-		var x3 = AC-ESTOQUE;
-			x3 = x3/PC;
-		console.log(x3);
+		var xx3 = AC-ESTOQUE;
+		var	x3 = ((xx3/PC)*3.55);
+		//console.log(x3);
 
+		return x3;
 	}
 
 	function calculaX4 () {
@@ -81,19 +94,51 @@ function calcula(){
 			PC = PC.toString().replace('.','');
 			PC = PC.replace(',','.');
 
-		var x4 = AC/PC;
+		var x4 = ((AC/PC)*1.06);
 
-		console.log(x4);
+		//console.log(x4);
+		return x4;
 	}
 
 	function calculaX5 () {
-		
+		var PNC = document.getElementById("PNC").value;
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.replace(',','.');
+
+		var PL = document.getElementById("PL").value;
+			PL = PL.toString().replace('.','');
+			PL = PL.toString().replace('.','');
+			PL = PL.toString().replace('.','');
+			PL = PL.replace(',','.');
+
+		var PC = document.getElementById("PC").value;
+			PC = PC.toString().replace('.','');
+			PC = PC.toString().replace('.','');
+			PC = PC.toString().replace('.','');
+			PC = PC.replace(',','.');
+
+		var PNC = document.getElementById("PNC").value;
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.replace(',','.');	
+
+
+		var ET =  parseInt(PC) + parseInt(PNC);
+		var x5 = ((ET/PL)*0.33); 
+
+		//console.log(x5);
+		return x5;
+
 	}
 
-calculaX1();
-calculaX2();
-calculaX3();
-calculaX4();
+var KNT = calculaX1()+calculaX2()+calculaX3()
+	KNT = KNT - calculaX4();
+	KNT = KNT - calculaX5();
+	
+console.log(KNT);
 
 }
 
@@ -102,13 +147,17 @@ KNT = 0,05*1 + 1,65*2 + 3,55*3 - 1,06*4 - 0,33*5
 
 X1 = LL/PL
 
-X2 = (AC+RLP)/PE
+X2 = (AC+RLP)/PC
 
-X3 = (AC-Estoque)/PC
+X3 = (AC-Estoque)/PNC
 
-X4 = AC/PC
+X4 = AC/PNC
 
-X5 = ET/PL
+X5 = ET(PNC)/PL
+
+
+PNC+PÑC = PC = dividas
+PNC = ET = PE =  Dividas
 
 
 Escala de kanitz
