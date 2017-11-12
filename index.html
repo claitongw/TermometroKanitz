@@ -1,40 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=chrome">
-	<title>Kanitz Model</title>
-	<link rel="stylesheet">
-	
-</head>
-<body>
-	<div>
-		<form action="index_submit" method="get" accept-charset="utf-8" id="formValores">
-			<br><input type="text" id="LL" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Lucro Liquido">
-			<br><input type="text" id="PL" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Patrimonio Liquido">
-			<br><input type="text" id="AC" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Ativo Circulante">
-			<br><input type="text" id="RLP" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Realizavel Longo Prazo">
-			<br><input type="text" id="PC" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Passivo Circulante"> 
-			<br><input type="text" id="PNC" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Passivo NÃO Circulante"> 
-			<br><input type="text" id="ESTOQUE" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Estoque">
-			<br><input type="button" name="CALCULAR" value="Calcular" onclick="calcula()">
-		</form>
-	</div>
-
-	<div>
-
-		
-	</div>
-
-
-<script src="js/mascaraMoeda.js"></script>
-<script src="js/calculaX.js"></script>
-<script src="js/javascript.js"></script>
-	
-</body>
-</html>
-
-
 <!--
 KNT = 0,05*1 + 1,65*2 + 3,55*3 - 1,06*4 - 0,33*5
 
@@ -56,7 +19,7 @@ PC = ET = Dividas
 Escala de kanitz
 Solvente > 0
 Indefinida = 0 até (-3)
-Insolvente <  3 
+Insolvente <  3
 
 
 15.244.949,00
@@ -67,3 +30,159 @@ Insolvente <  3
 564.667,00
 16.872.053,00
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kanitz Thermometer</title>
+  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/flexslider.css" rel="stylesheet" >
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/queries.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+</head>
+<body id="top">
+  <header id="home">
+    <nav>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+            <nav class="pull">
+              <ul class="top-nav">
+                <form action="index_submit" method="get" accept-charset="utf-8" id="formValores">
+                <li>
+                  R$<input type="text" id="LL" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Lucro Liquido">
+                  <span class="indicator">
+                    <i class="fa fa-angle-right"></i>
+                  </span>
+                </li>
+                <li>
+                  R$<input type="text" id="PL" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Patrimonio Liquido">
+                  <span class="indicator">
+                    <i class="fa fa-angle-right"></i>
+                  </span>
+                </li>
+                <li>
+                  R$<input type="text" id="AC" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Ativo Circulante">
+                  <span class="indicator">
+                    <i class="fa fa-angle-right"></i>
+                  </span>
+                </li>
+                <li>
+                  R$<input type="text" id="RLP" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Realizavel Longo Prazo">
+                  <span class="indicator">
+                    <i class="fa fa-angle-right"></i>
+                  </span>
+                </li>
+                <li>
+                  R$<input type="text" id="PC" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Passivo Circulante">
+                  <span class="indicator">
+                    <i class="fa fa-angle-right"></i>
+                  </span>
+                </li>
+                <li>
+                  R$<input type="text" id="PNC" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Passivo NÃO Circulante">
+                  <span class="indicator">
+                    <i class="fa fa-angle-right"></i>
+                  </span>
+                </li>
+                <li>
+                  R$<input type="text" id="ESTOQUE" onKeyPress="return(MascaraMoeda(this,'.',',',event))" placeholder="Estoque">
+                  <span class="indicator">
+                    <i class="fa fa-angle-right"></i>
+                  </span>
+                </li>
+                <li>
+                  <input class="btn" type="button" name="CALCULAR" value="Calcular" onclick="calcula()">
+                </li>
+              </form>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-right navicon">
+            <a class="nav_slide_button" href="#">
+							<span class="calcular text-center inner">Calcular Kanitz</span>
+							<i class="fa fa-line-chart"></i>
+							<span></span>
+						</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 text-center inner">
+            <h1 class="animated fadeInDown"><span>Termômetro de </span> Kanitz</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 text-center">
+            <a href="#oq" class="learn-more-btn">O que é o <em>Termômetro de Kanitz</em></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+  <section id="oq" class="intro text-center section-padding" id="intro">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 wp1">
+          <h1 class="arrow">
+            O Termômetro de Solvabilidade ou Solvência de Kanitz
+          </h1>
+          <p>
+            O termômetro de solvabilidade de Kanitz, vem sendo utilizado
+            desde a década de 70, para que possa ser avaliada a chamada
+            solvência das empresas. Houveram muitos problemas ocorridos
+            com falências e concordatas nos anos 70 e 80, devidos aos choques
+            econômicos, de câmbio e de petróleo, afetando substancialmente o
+            desempenho de empresas privadas e públicas. Stephen Kanitz,
+            com sua grande capacidade de análise, conseguiu então na época,
+            através de uma fórmula matemática, após analisar diversas
+            demonstrações financeiras, em séries estatísticas de diversos
+            segmentos econômicos, definir com um único número se a empresa
+            estaria solvente ou não. Este índice então nos dá a possibilidade
+            de definir se uma determinada empresa está em condições de honrar
+            seus compromissos financeiros, bem como de definir se ela terá
+            possibilidade de se manter no mercado em que ela atua nos próximos anos.
+            Para que se possa avaliar uma empresa, é necessário ter o balanço
+            patrimonial e a demonstração de resultados.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="legals">
+            <li><a href="https://fit.faccat.br/ead/">Sistemas de Informação</a></li>
+            <li><a href="https://www2.faccat.br/portal/">FACCAT</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 credit">
+          <p>Administração Financeira <em>Sergio Nikolay</em></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="js/waypoints.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/jquery.flexslider.js"></script>
+  <script src="js/modernizr.js"></script>
+	<script src="js/mascaraMoeda.js"></script>
+	<script src="js/calculaX.js"></script>
+	<script src="js/javascript.js"></script>
+</body>
+</html>
