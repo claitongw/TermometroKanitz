@@ -293,7 +293,7 @@ input[type="search"] { -webkit-appearance: textfield; /* 1 */
 	/* ==========================================================================
 	Hero
 	========================================================================== */
-	.hero { background: url('../img/bg4.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding: 65px 0 300px 0; height: auto; }
+	.hero { background: url('../img/hero-bg.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding: 65px 0 300px 0; height: auto; }
 	.hero h1 { font-size: 40px; letter-spacing: 12px; margin: 10px; }
 	.hero h1 span { color: #a1a9b0; display: inline-block; }
 	.hero p { letter-spacing: 1px; }
