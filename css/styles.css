@@ -113,6 +113,27 @@ input.btn {
 #grafico {
 	padding: 20px 0px 43px 0px;
 }
+#removeData {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    user-select: none;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #9ca4ad;
+    color: #252830;
+    font-size: 1.3rem;
+    font-family: monospace;
+    margin-left: 60px;
+}
 /* ==========================================================================
 Links
 ========================================================================== */

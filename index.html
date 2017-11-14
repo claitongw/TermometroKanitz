@@ -170,7 +170,6 @@ Insolvente <  3
     <div style="width:75%;">
       <canvas id="canvas"></canvas>
     </div>
-    <button id="addData">Add Data</button>
     <button id="removeData">Remove Data</button>
   </section>
   <footer>
@@ -234,7 +233,7 @@ Insolvente <  3
 			RLP = RLP.toString().replace('.','');
 			RLP = RLP.toString().replace('.','');
 			RLP = RLP.toString().replace('.','');
-			RLP = RLP.replace(',','.');			
+			RLP = RLP.replace(',','.');
 
 		var PC = document.getElementById("PC").value;
 			PC = PC.toString().replace('.','');
@@ -246,7 +245,7 @@ Insolvente <  3
 			PNC = PNC.toString().replace('.','');
 			PNC = PNC.toString().replace('.','');
 			PNC = PNC.toString().replace('.','');
-			PNC = PNC.replace(',','.');					
+			PNC = PNC.replace(',','.');
 
 		var xx2 = parseInt(AC) + parseInt(RLP);
 		var PE =  parseInt(PC) + parseInt(PNC);
@@ -325,11 +324,11 @@ Insolvente <  3
 			PNC = PNC.toString().replace('.','');
 			PNC = PNC.toString().replace('.','');
 			PNC = PNC.toString().replace('.','');
-			PNC = PNC.replace(',','.');	
+			PNC = PNC.replace(',','.');
 
 
 		var ET =  parseInt(PC) + parseInt(PNC);
-		var x5 = ((ET/PL)*0.33); 
+		var x5 = ((ET/PL)*0.33);
 
 		//console.log(x5);
 		return x5;
@@ -341,7 +340,7 @@ Insolvente <  3
 	KNT = KNT - calculaX5();
 
 	console.log(KNT);
-	
+
 
 }
 
