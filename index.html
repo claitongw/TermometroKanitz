@@ -103,7 +103,7 @@ Insolvente <  3
                   </li>
                   <li>
                     <a href="#grafico">
-                      <input class="btn" type="button" name="CALCULAR" value="Calcular" onclick="calcula()">
+                      <input class="btn" type="button" name="CALCULAR" id="addData" value="Calcular" onclick="calcula()">
                     </a>
                   </li>
                 </form>
@@ -198,6 +198,154 @@ Insolvente <  3
   <script src="js/calculaX.js"></script>
   <script src="js/javascript.js"></script>
   <script>
+
+  var KNT = 0;
+
+  function calcula(){
+
+	function calculaX1 () {
+		var LL = document.getElementById("LL").value;
+			LL = LL.toString().replace('.','');
+			LL = LL.toString().replace('.','');
+			LL = LL.toString().replace('.','');
+			LL = LL.replace(',','.');
+
+		var PL = document.getElementById("PL").value;
+			PL = PL.toString().replace('.','');
+			PL = PL.toString().replace('.','');
+			PL = PL.toString().replace('.','');
+			PL = PL.replace(',','.');
+
+		var xx1 = LL/PL;
+		var x1 = xx1*0.05;
+
+		return x1;
+
+	}
+
+	function calculaX2 (){
+		var AC = document.getElementById("AC").value;
+			AC = AC.toString().replace('.','');
+			AC = AC.toString().replace('.','');
+			AC = AC.toString().replace('.','');
+			AC = AC.replace(',','.');
+
+		var RLP = document.getElementById("RLP").value;
+			RLP = RLP.toString().replace('.','');
+			RLP = RLP.toString().replace('.','');
+			RLP = RLP.toString().replace('.','');
+			RLP = RLP.replace(',','.');			
+
+		var PC = document.getElementById("PC").value;
+			PC = PC.toString().replace('.','');
+			PC = PC.toString().replace('.','');
+			PC = PC.toString().replace('.','');
+			PC = PC.replace(',','.');
+
+		var PNC = document.getElementById("PNC").value;
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.replace(',','.');					
+
+		var xx2 = parseInt(AC) + parseInt(RLP);
+		var PE =  parseInt(PC) + parseInt(PNC);
+		var x2 = ((xx2/PE)*1.65);
+		//console.log(x2);
+
+		return x2;
+	}
+
+	function calculaX3 () {
+		var AC = document.getElementById("AC").value;
+			AC = AC.toString().replace('.','');
+			AC = AC.toString().replace('.','');
+			AC = AC.toString().replace('.','');
+			AC = AC.replace(',','.');
+
+
+		var ESTOQUE = document.getElementById("ESTOQUE").value;
+			ESTOQUE = ESTOQUE.toString().replace('.','');
+			ESTOQUE = ESTOQUE.toString().replace('.','');
+			ESTOQUE = ESTOQUE.toString().replace('.','');
+			ESTOQUE = ESTOQUE.replace(',','.');
+
+		var PC = document.getElementById("PC").value;
+			PC = PC.toString().replace('.','');
+			PC = PC.toString().replace('.','');
+			PC = PC.toString().replace('.','');
+			PC = PC.replace(',','.');
+
+		var xx3 = AC-ESTOQUE;
+		var	x3 = ((xx3/PC)*3.55);
+		//console.log(x3);
+
+		return x3;
+	}
+
+	function calculaX4 () {
+		var AC = document.getElementById("AC").value;
+			AC = AC.toString().replace('.','');
+			AC = AC.toString().replace('.','');
+			AC = AC.toString().replace('.','');
+			AC = AC.replace(',','.');
+
+		var PC = document.getElementById("PC").value;
+			PC = PC.toString().replace('.','');
+			PC = PC.toString().replace('.','');
+			PC = PC.toString().replace('.','');
+			PC = PC.replace(',','.');
+
+		var x4 = ((AC/PC)*1.06);
+
+		//console.log(x4);
+		return x4;
+	}
+
+	function calculaX5 () {
+		var PNC = document.getElementById("PNC").value;
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.replace(',','.');
+
+		var PL = document.getElementById("PL").value;
+			PL = PL.toString().replace('.','');
+			PL = PL.toString().replace('.','');
+			PL = PL.toString().replace('.','');
+			PL = PL.replace(',','.');
+
+		var PC = document.getElementById("PC").value;
+			PC = PC.toString().replace('.','');
+			PC = PC.toString().replace('.','');
+			PC = PC.toString().replace('.','');
+			PC = PC.replace(',','.');
+
+		var PNC = document.getElementById("PNC").value;
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.toString().replace('.','');
+			PNC = PNC.replace(',','.');	
+
+
+		var ET =  parseInt(PC) + parseInt(PNC);
+		var x5 = ((ET/PL)*0.33); 
+
+		//console.log(x5);
+		return x5;
+
+	}
+
+	KNT = calculaX1()+calculaX2()+calculaX3()
+	KNT = KNT - calculaX4();
+	KNT = KNT - calculaX5();
+
+	console.log(KNT);
+	
+
+}
+
+
   var MONTHS = ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"];
   var config = {
     type: 'line',
@@ -263,7 +411,7 @@ Insolvente <  3
       config.data.labels.push(month);
 
       config.data.datasets.forEach(function(dataset) {
-        dataset.data.push(-2);
+        dataset.data.push(KNT);
       });
 
       window.myLine.update();

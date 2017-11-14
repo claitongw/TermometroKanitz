@@ -134,7 +134,7 @@ function calcula(){
 
 	}
 
-var KNT = calculaX1()+calculaX2()+calculaX3()
+	KNT = calculaX1()+calculaX2()+calculaX3()
 	KNT = KNT - calculaX4();
 	KNT = KNT - calculaX5();
 	
