@@ -111,30 +111,64 @@ input.btn {
 	font-family: monospace;
 }
 #grafico {
-	padding: 20px 0px 43px 0px;
+	padding: 20px 0px 0px 0px;
 }
 #removeData {
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    padding: 6px 12px;
-    line-height: 1.42857143;
-    border-radius: 4px;
-    user-select: none;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    background-color: #9ca4ad;
-    color: #252830;
-    font-size: 1.3rem;
-    font-family: monospace;
-    margin-left: 60px;
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 2px solid #353535;
+	white-space: nowrap;
+	padding: 6px 12px;
+	line-height: 1.42857143;
+	border-radius: 4px;
+	user-select: none;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	background-color: #dcdfe1;
+	color: #252830;
+	font-size: 1.3rem;
+	font-family: monospace;
+	margin-left: 60px;
 }
-/* ==========================================================================
+input#addData {
+	padding-top: 10px;
+	margin-top: 0px;
+}
+a.nav_slide_button {
+	width: 126px;
+	height: 48px;
+	margin-top: 80px;
+	padding-top: 0px;
+}
+.mostrar {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 2px solid #353535;
+	white-space: nowrap;
+	padding: 6px 12px;
+	line-height: 1.42857143;
+	border-radius: 4px;
+	user-select: none;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	background-color: #dcdfe1;
+	color: #252830;
+	font-size: 1rem;
+	font-family: monospace;
+	margin-left: 27%;
+	margin-right: 27%;
+}
+.mostrar:hover {
+		color: #353535;
+}
+	/* ==========================================================================
 Links
 ========================================================================== */
 /* * Addresses `outline` inconsistency between Chrome and other browsers. */
@@ -318,8 +352,8 @@ input[type="search"] { -webkit-appearance: textfield; /* 1 */
 	.hero h1 { font-size: 40px; letter-spacing: 12px; margin: 10px; }
 	.hero h1 span { color: #a1a9b0; display: inline-block; }
 	.hero p { letter-spacing: 1px; }
-	.learn-more-btn { background: rgba(61, 201, 179, 1); padding: 20px 40px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; color: #fff; text-transform: uppercase; letter-spacing: 1px; display: inline-block; -webkit-box-shadow: 0px 3px 0px 0px #309383; -moz-box-shadow: 0px 3px 0px 0px #309383; box-shadow: 0px 3px 0px 0px #309383; margin: 60px 0 0; font-weight: bold; }
-	.learn-more-btn:hover, .learn-more-btn:focus { background: rgba(61, 201, 179, 0.6); color: #fff; }
+	.learn-more-btn { background: rgb(128, 128, 128); padding: 20px 40px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; color: #fff; text-transform: uppercase; letter-spacing: 1px; display: inline-block; -webkit-box-shadow: 0px 3px 0px 0px #353535; -moz-box-shadow: 0px 3px 0px 0px #309383; box-shadow: 0px 3px 0px 0px #353535; margin: 60px 0 0; font-weight: bold; }
+	.learn-more-btn:hover, .learn-more-btn:focus { background: #a1a9b061;; color: #353535; }
 	/* ==========================================================================
 	Intro
 	========================================================================== */
@@ -404,14 +438,14 @@ input[type="search"] { -webkit-appearance: textfield; /* 1 */
 	Footer
 	========================================================================== */
 	footer a { color: #a1a9b0; }
-	footer { background-color: #242830; padding: 40px 0 30px; }
+	footer { background-color: #242830; padding: 17px 0 5px; }
 	footer p { color: #fff; }
-	ul.legals { list-style: none; color: #fff; line-height: 25px; }
+	ul.legals { list-style: none; color: #fff; line-height: 25px; margin-left: -79px;}
 	ul.legals li { display: inline-block; }
 	ul.legals li::after { content: " |"; }
 	ul.legals li:last-child::after { content: ""; }
 	.legals { text-align: left; }
-	.credit { text-align: right; }
+	.credit { text-align: right; padding-right: 0px;}
 	/* ==========================================================================
 	FlexSlider Custom CSS
 	========================================================================== */

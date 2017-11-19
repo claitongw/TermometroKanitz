@@ -102,8 +102,10 @@ Insolvente <  3
                     </span>
                   </li>
                   <li>
-                    <a href="#grafico">
-                      <input class="btn" type="button" name="CALCULAR" id="addData" value="Calcular" onclick="calcula()">
+                    <a href="#grafico" class="nav_slide_button">
+                      <input class="btn calcular text-center inner" type="button" name="CALCULAR" id="addData" value="Calcular" onclick="calcula()">
+                      <i class="fa fa-line-chart"></i>
+                      <span></span>
                     </a>
                   </li>
                 </form>
@@ -160,7 +162,12 @@ Insolvente <  3
             seus compromissos financeiros, bem como de definir se ela terá
             possibilidade de se manter no mercado em que ela atua nos próximos anos.
             Para que se possa avaliar uma empresa, é necessário ter o balanço
-            patrimonial e a demonstração de resultados.<br> <a href="https://www.classecontabil.com.br/consultoria-gratuita/ver/128669">[Autor: LUIZ SEITI NODA / Classe Contabil - 2006]</a>
+            patrimonial e a demonstração de resultados.
+            <br>
+            <a href="https://www.classecontabil.com.br/consultoria-gratuita/ver/128669">
+              [Autor: LUIZ SEITI NODA / Classe Contabil - 2006]
+            </a>
+            <a href="#grafico" class="mostrar">Mostrar Gráfico Atual</a>
           </p>
         </div>
       </div>
@@ -170,15 +177,19 @@ Insolvente <  3
     <div style="width:75%;">
       <canvas id="canvas"></canvas>
     </div>
-    <button id="removeData">Remove Data</button>
+    <button id="removeData">Retirar ultimo ano</button>
   </section>
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-md-6">
           <ul class="legals">
-            <li><a href="https://fit.faccat.br/ead/">Sistemas de Informação</a></li>
-            <li><a href="https://www2.faccat.br/portal/">FACCAT</a></li>
+            <li><a href="https://fit.faccat.br/ead/"> Sistemas de Informação </a></li>
+            <li><a href="https://www2.faccat.br/portal/"> FACCAT </a></li>
+            <li> Marcelo </li>
+            <li> Claiton </li>
+            <li> Gerson </li>
+            <li> José</li>
           </ul>
         </div>
         <div class="col-md-6 credit">
@@ -345,7 +356,7 @@ Insolvente <  3
 }
 
 
-  var MONTHS = ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"];
+  var MONTHS = ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2017", "2028", "2029", "2030"];
   var config = {
     type: 'line',
     data: {
